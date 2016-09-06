@@ -102,7 +102,15 @@ copyright 2010 Patrice Poly
      	 <command>nasal</command>
      	 <script>ask13.winch_dialog.open()</script>
        </binding>
-     </item>    
+     </item>  
+    <item n="10">
+     <label>Pushback</label>
+     <name>pushback</name>
+     <binding>
+      <command>dialog-show</command>
+      <dialog-name>pushback</dialog-name>
+     </binding>
+    </item>
     </menu>
    </default>
   </menubar>
@@ -262,6 +270,7 @@ copyright 2010 Patrice Poly
 		<flight>
 		  <elevator-trim>0.2195</elevator-trim> <!-- controllable -->
                   <spoilers alias="/controls/flight/elevator-trim"/> <!-- spoilers is transmitted via mp (elevator-trim is NOT) -->
+                  <rudder2 type="double">0</rudder2>
 		</flight>
 		<engines>
 		  <engine>
@@ -373,6 +382,7 @@ copyright 2010 Patrice Poly
 			<file>Aircraft/ASK13/Nasal/AR3201.nas</file>
 			<file>Aircraft/ASK13/Nasal/immat.nas</file>
 			<file>Aircraft/ASK13/Nasal/dialogs.nas</file>
+			<file>Aircraft/LS8/Nasal/system.nas</file>
 		</ask13>
 	</nasal>
   
