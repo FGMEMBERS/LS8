@@ -130,11 +130,11 @@
  
 
   <model>
-	 <path>Aircraft/ASK13/Models/instruments/wool-thread/wool-thread.xml</path>
+	 <path>Aircraft/LS8/Models/instruments/wool-thread/wool-thread.xml</path>
 	 <offsets>
-		 <x-m>0.786</x-m>
+		 <x-m>-2.59366</x-m>
 		 <y-m> 0</y-m>
-		 <z-m>0.591</z-m>
+		 <z-m>0.29072</z-m>
 		 <pitch-deg>0</pitch-deg>
 	 </offsets>	 
  </model>
