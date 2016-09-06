@@ -3,11 +3,11 @@
 <airplane mass="628.3">
 
 <!-- Approach configuration -->
-<approach speed="40" aoa="5.2" glide-angle="43">
+<approach speed="40" aoa="5.2" glide-angle="2.1">
 </approach>
 
 <!-- Cruise configuration -->
-<cruise speed="45" alt="5000" glide-angle="43">
+<cruise speed="45" alt="5000" glide-angle="2.1">
 </cruise>
 
 <!-- pilot's eyepoint -->
@@ -16,7 +16,7 @@
 <fuselage ax="3.37218" ay="0.0" az="-0.16238" bx="-2.98439" by="0.0" bz="-0.00127"
 		  width="0.6" taper="0.1" midpoint="0.24" idrag="1" />
 
-<wing x="1.00925" y="0.22512" z="0.13407" taper="0.379" incidence="3" twist="-2.5"
+<wing x="1.00925" y="0.22512" z="0.13407" taper="0.379" incidence="3"
 	  length="8.8" chord="0.947" sweep="-1" dihedral="3.5" >
 	<stall aoa="12" width="12" peak="1.5"/>
 		<flap0 start="0.512" end="0.9" lift="1.55" drag="1.3"/>
