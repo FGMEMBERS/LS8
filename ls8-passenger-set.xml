@@ -155,7 +155,7 @@
 
   <sound>
    <audible>true</audible>
-   <path>Aircraft/ASK13/Sounds/passenger-sound.xml</path>
+   <path>Aircraft/LS8/Sounds/passenger-sound.xml</path>
   </sound>
 
 

@@ -122,14 +122,14 @@ When there is somebody with a followme around, you can connect to it by pressing
        <label>Aerotow Settings</label>
        <binding>
      	 <command>nasal</command>
-     	 <script>ask13.aerotow_dialog.open()</script>
+     	 <script>ls8.aerotow_dialog.open()</script>
        </binding>
      </item>    
      <item>
        <label>Winch Settings</label>
        <binding>
      	 <command>nasal</command>
-     	 <script>ask13.winch_dialog.open()</script>
+     	 <script>ls8.winch_dialog.open()</script>
        </binding>
      </item>  
      <item>
