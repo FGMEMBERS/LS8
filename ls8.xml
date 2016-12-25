@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<airplane mass="628.3">
+<airplane mass="562">
 
 <!-- Approach configuration -->
 <approach speed="40" aoa="5.2" glide-angle="2.1">
@@ -31,7 +31,7 @@
 			prop="surface-positions/right-aileron-pos-norm"/>
 	<control-speed control="FLAP0" transition-time="0.8"/>
 -->
-	<spoiler start="0.28" end="0.40" lift="-2" drag="30"/>
+	<spoiler start="0.28" end="0.40" lift="-2" drag="50"/>
 			<control-input axis="/controls/engines/engine/throttle" control="SPOILER"
 			src0="0" src1="1.0"
 			dst0="1.0" dst1="0"/>
@@ -62,7 +62,11 @@
 </vstab>
 
 
+<!--Front Skid (Fuselage)-->
 
+<gear x="2.93" y="0" z="-0.4" compression="0.1" dfric="1.5" sfric ="1.5" damp="2" skid="1">
+
+</gear>
 
 <!-- main wheel ,  brake is tied to full airbrakes-->
 <gear x="1.30793" y="0" z="-0.57845" compression="0.05" spring="1" damp="1"
@@ -89,27 +93,46 @@
 <!--lef wing skid-->
 <gear x="1.17573" y="8.56136" z="0.57752" skid="1" compression="0.1" spring="0.9" sfric="1" dfric="1"/>
 
-<!-- pilots -->
+<!-- Pilot -->
+        <weight x="1.79862" y="0.0" z="-0.00803" mass-prop="/sim/weight[0]/weight-lb"/>
+        <!--Tail ballast-->
+        <weight x="-2.82138" y="0.0" z="0.05698" mass-prop="/sim/weight[1]/weight-lb"/>
+        <!--Wing ballast-->
+        <weight x="1.06593" y="3.09643" z="0.28471" mass-prop="/sim/weight[2]/weight-lb"/>
+        <weight x="1.06593" y="-3.09643" z="0.28471" mass-prop="/sim/weight[2]/weight-lb"/>
 
-<!--
-<ballast x="-1.388" y="0" z="0.061" mass="150"/>
-<ballast x="-2.267" y="0" z="0.215" mass="150"/>
--->
-<!--<ballast x="-1.388" y="0" z="0.061" mass="145"/>-->
-<ballast x="1.5" y="0" z="0.215" mass="300"/><!--Cockpit-->
-<ballast x="1.3" y="0" z="0.215" mass="50"/><!--Retractable Gear-->	
+<ballast x="1.5" y="0" z="0" mass="200"/><!--Cockpit-->
+<ballast x="1.3" y="0" z="-0.215" mass="50"/><!--Retractable Gear-->	
 
 
-<!-- Pushback -->
-	<thruster x="-3.3703" y="0.0" z="-0.15999" vx="1" vy="1" vz="0" thrust="100">
-		<control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" dst0="-1" src1="1" dst1="1" />
-		<control-input axis="/controls/flight/rudder2" control="THROTTLE" src0="-1" dst0="-1" src1="1" dst1="1" />
-	</thruster>
-	<thruster x="-3.3703" y="0.0" z="-0.15999" vx="1" vy="-1" vz="0" thrust="100">
-		<control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" dst0="-1" src1="1" dst1="1" />
-		<control-input axis="/controls/flight/rudder2" control="THROTTLE" src0="-1" dst0="1" src1="1" dst1="-1" />
-	</thruster>
-
+  <!--Added for easy ground handling-->
+<!--Assiting gears for ground movement-->
+<gear x="1.17573" y="5" z="-0.4" compression=".1"
+    spring="0.8" damp="1.2" sfric="0.8" dfric="0.7" skid="true">
+  <control-input axis="/controls/gear/assist" control="EXTEND"/>
+  <control-output control="EXTEND" prop="/gear/gear[6]/position-norm"/>
+</gear>
+<gear x="1.17573" y="-5" z="-0.4" compression=".1"
+    spring="0.8" damp="1.2" sfric="0.8" dfric="0.7" skid="true">
+  <control-input axis="/controls/gear/assist" control="EXTEND"/>
+  <control-output control="EXTEND" prop="/gear/gear[7]/position-norm"/>
+</gear>
+<!--Pushing/pulling the aircraft around:-->
+<!--TURN, this is done by tearing the wings around-->
+  <thruster x="1.15"  y="9" z="0.6" vx="1" vy="-1" vz="0" thrust="50">
+  <control-input axis="/controls/flight/rudder2" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
+  </thruster>
+  <thruster x="1.15"  y="-9" z="0.6" vx="-1" vy="1" vz="0" thrust="50">
+  <control-input axis="/controls/flight/rudder2" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
+  </thruster>
+  <!--Push/pull forward-->
+  <thruster x="1.30793" y="0" z="-0.57845" vx="1" vy="0" vz="0" thrust="150">
+  <control-input axis="/controls/throttle-2" control="THROTTLE"/>
+  </thruster>
+  <!--Push/pull backward-->
+  <thruster x="1.30793" y="0" z="-0.57845" vx="-1" vy="0" vz="0" thrust="150">
+      <control-input axis="/controls/throttle-reverse" control="THROTTLE"/>
+  </thruster>
 
 
 

@@ -6,13 +6,88 @@
 <PropertyList>
 
  <path>ls8.ac</path>
+  <nasal>
+    <load>
 
- <offsets>
-   <x-m>0.</x-m>
-   <y-m>0.</y-m>
-   <z-m>0.</z-m>
-   <pitch-deg>0.0</pitch-deg>
- </offsets>
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      
+      var canopy_door = self.getNode("sim/model/door-positions/canopy/position-norm", 1);
+      
+      canopy_door.alias(float_0);
+    </load>
+
+    <unload>
+      canopy_door.unalias();
+    </unload>
+  </nasal>
+ 
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>canopy</object-name>
+  </effect>
+ 
+  
+  <model>
+      <name>woolthread</name>
+	 <path>Aircraft/LS8/Models/instruments/wool-thread/wool-thread.xml</path>
+	 <offsets>
+		 <x-m>-2.59366</x-m>
+		 <y-m> 0</y-m>
+		 <z-m>0.29072</z-m>
+		 <pitch-deg>0</pitch-deg>
+	 </offsets>	 
+ </model>
+  
+ <!--Canopy-->
+  <animation>
+    <type>pick</type>
+     <object-name>canopy</object-name>
+     <object-name>canopy.int</object-name>
+     <object-name>door</object-name>
+     <object-name>door.int</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.canopy.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+ 
+ <animation>
+     <type>rotate</type>
+     <object-name>canopy</object-name>
+     <object-name>canopy.int</object-name>
+     <object-name>door</object-name>
+     <object-name>door.int</object-name>
+     <object-name>woolthread</object-name>
+    <property>sim/model/door-positions/canopy/position-norm</property>
+   <interpolation>
+     <entry>
+       <ind>0.0</ind>
+       <dep>0</dep>
+     </entry>
+     <entry>
+       <ind>0.2</ind>
+       <dep>-1</dep>
+     </entry>
+     <entry>
+       <ind>1</ind>
+       <dep>-50</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>-3.04753</x-m>
+			<z-m>0.05074</z-m>
+		</center>
+        <axis>
+            <y>1</y>
+        </axis>
+ </animation>
+ 
+ 
  <animation>
      <type>translate</type>
      <object-name>wheelM</object-name>
@@ -130,6 +205,7 @@
  
 
   <model>
+      <name>woolthread</name>
 	 <path>Aircraft/LS8/Models/instruments/wool-thread/wool-thread.xml</path>
 	 <offsets>
 		 <x-m>-2.59366</x-m>
@@ -322,23 +398,25 @@
       <z-m> 0.000 </z-m>
     </offsets>
   </model>-->
- 
-  <effect>
-    <inherits-from>Models/Effects/ask13_bumpspec</inherits-from>
-    <object-name>wing</object-name>
-  </effect>
 
-  <effect>
-    <inherits-from>Models/Effects/ask13_bumpspec-2</inherits-from>
-    <object-name>left-aileron</object-name>
-    <object-name>right-aileron</object-name>
-    <object-name>rudder</object-name>
-  </effect>
 
   <effect>
     <inherits-from>Models/Effects/ask13_model</inherits-from>
-    <object-name>fuselage</object-name>
+     <object-name>door</object-name>
+     <object-name>door.int</object-name>
+    <object-name>body</object-name>
     <object-name>hstab</object-name>
+    <object-name>elevator</object-name>
+    <object-name>rudder</object-name>
+    <object-name>wings</object-name>
+    <object-name>spoilers</object-name>
+    <object-name>aileronLI</object-name>
+    <object-name>aileronLO</object-name>
+    <object-name>aileronRI</object-name>
+    <object-name>aileronRO</object-name>
+     <object-name>geardoorL</object-name>
+     <object-name>geardoorR</object-name>
+     <object-name>tailfairing</object-name>
   </effect>
     
    <animation>
@@ -573,6 +651,15 @@
 	</animation>
  
  	<animation>
+		<type>translate</type>
+		<object-name>spoilers</object-name>
+		<property>surface-positions/speedbrake-pos-norm</property>
+		<factor>0.1</factor>
+                <axis><z>1</z>
+        </axis>
+	</animation>
+ 
+ 	<animation>
 		<type>rotate</type>
 		<object-name>aileronRO</object-name>
 		<property>surface-positions/left-aileron-pos-norm</property>
@@ -649,15 +736,14 @@
   
  	<animation>
 		<type>rotate</type>
-		<object-name>front-yoke</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
+		<object-name>yoke</object-name>
+		<property>controls/flight/elevator</property>
 		<min-deg>-20</min-deg>
 		<max-deg>20</max-deg>
 		<factor>20</factor>
 		<center>
-			<x-m>0.884265</x-m>
-			<y-m>-0.000313</y-m>
-			<z-m>-0.237486</z-m>
+			<x-m>-2.19743</x-m>
+			<z-m>-0.2021</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -669,15 +755,14 @@
 
  	<animation>
 		<type>rotate</type>
-		<object-name>front-yoke</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
+		<object-name>yoke</object-name>
+		<property>controls/flight/aileron</property>
 		<min-deg>-25</min-deg>
 		<max-deg>25</max-deg>
 		<factor>-25</factor>
 		<center>
-			<x-m>0.884265</x-m>
-			<y-m>-0.000313</y-m>
-			<z-m>-0.237486</z-m>
+			<x-m>-2.19743</x-m>
+			<z-m>-0.2021</z-m>
 		</center>
 		<axis>
 			<x>1</x>
@@ -685,82 +770,128 @@
 			<z>0</z>
 		</axis>
 	</animation>
-	
-	<animation>
-		<type>rotate</type>
-		<object-name>back-yoke</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
-		<min-deg>-20</min-deg>
-		<max-deg>20</max-deg>
-		<factor>20</factor>
-		<center>
-			<x-m>1.899079</x-m>
-			<y-m>-0.000313</y-m>
-			<z-m>-0.125763</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-0.020925</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	
-
- 	<animation>
-		<type>rotate</type>
-		<object-name>back-yoke</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<min-deg>-20</min-deg>
-		<max-deg>20</max-deg>
-		<factor>-20</factor>
-		<center>
-			<x-m>1.839929</x-m>
-			<y-m>-0.000313</y-m>
-			<z-m>-0.125763</z-m>
-		</center>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	
+        <!--Spoiler Handle-->
+  <animation>
+    <type>slider</type>
+		<object-name>spoiler.handle</object-name>
+    <visible>true</visible>
+    <drag-direction>vertical</drag-direction>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+		<property>controls/engines/engine/throttle</property>
+    <factor>0.025</factor>
+    <min>0</min>
+    <max>1</max>
+      </binding>
+    </action>
+  </animation>
  	 <animation>
-		<type>rotate</type>
-		<object-name>front-trim-handl</object-name>
-		<property>controls/flight/spoilers</property>
-		<min-deg>-50</min-deg>
-		<max-deg>50</max-deg>
-		<factor>-100</factor>
-		<center>
- 			<x-m>0.947587</x-m>
-			<y-m>0.257991</y-m>
-			<z-m>0.122396</z-m>
-		</center>
+		<type>translate</type>
+		<object-name>spoiler.handle</object-name>
+		<property>controls/engines/engine/throttle</property>
 		<axis>
-			<x>0</x>
-			<y>0.003923</y>
+			<x>1</x>
+			<y>0.0</y>
 			<z>0</z>
 		</axis>
+                <interpolation>
+                    <entry>
+                        <ind>1</ind>
+                        <dep>0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.7</ind>
+                        <dep>0.15</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.0</ind>
+                        <dep>0.15</dep>
+                    </entry>
+      </interpolation>
 	</animation>
-	
-	<animation>
-		<type>rotate</type>
-		<object-name>rear-trim-handl</object-name>
-		<property>controls/flight/spoilers</property>
-		<min-deg>-50</min-deg>
-		<max-deg>50</max-deg>
-		<factor>-100</factor>
-		<center>
-			<x-m>2.039331</x-m>
-			<y-m>0.257991</y-m>
-			<z-m>0.302744</z-m>
-		</center>
+ 	 <animation>
+		<type>translate</type>
+		<object-name>spoiler.handle</object-name>
+		<property>controls/engines/engine/throttle</property>
 		<axis>
-			<x>0</x>
-			<y>0.003923</y>
+			<x>1</x>
+			<y>0.4</y>
 			<z>0</z>
 		</axis>
+                <interpolation>
+                    <entry>
+                        <ind>1</ind>
+                        <dep>0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.65</ind>
+                        <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.50</ind>
+                        <dep>0.025</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.0</ind>
+                        <dep>0.025</dep>
+                    </entry>
+      </interpolation>
+	</animation>
+ 	 <animation>
+		<type>translate</type>
+		<object-name>spoiler.handle</object-name>
+		<property>controls/engines/engine/throttle</property>
+		<axis>
+			<x>1</x>
+			<y>0.0</y>
+			<z>0</z>
+		</axis>
+                <interpolation>
+                    <entry>
+                        <ind>1</ind>
+                        <dep>0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.5</ind>
+                        <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.0</ind>
+                        <dep>0.12</dep>
+                    </entry>
+      </interpolation>
+	</animation>
+        <!--Elevator trim handle-->
+  <animation>
+    <type>slider</type>
+		<object-name>trim.handle</object-name>
+    <visible>true</visible>
+    <drag-direction>vertical</drag-direction>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+		<property>controls/flight/elevator-trim</property>
+    <factor>0.025</factor>
+    <min>-1</min>
+    <max>1</max>
+      </binding>
+    </action>
+  </animation>
+ 	 <animation>
+		<type>translate</type>
+		<object-name>trim.handle</object-name>
+		<property>controls/flight/elevator-trim</property>
+		<axis>
+			<x>1</x>
+			<y>0.0</y>
+			<z>0</z>
+		</axis>
+                <factor>-0.035</factor>
 	</animation>
 	
 	
