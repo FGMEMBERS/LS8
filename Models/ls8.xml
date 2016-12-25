@@ -177,7 +177,7 @@
  </model>
  
   <model>
-	 <path>Aircraft/ASK13/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+	 <path>Aircraft/LS8/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
 	 <offsets>
 		 <x-m>-2.27944</x-m>
 		 <y-m> -0.11239</y-m>
@@ -247,164 +247,10 @@
                  <z-m>0.04</z-m>
 	 </offsets>	 
  </model>
- <!--
-     <model>
-	 <path>Aircraft/ASK13/Models/left-top-airbrake.xml</path>
-	  <name>left-top-airbrake</name>
-	 <offsets>
-			<x-m>2.480349</x-m>
-			<y-m>-2.693422</y-m>
-			<z-m>0.597342</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-      <model>
-	 <path>Aircraft/ASK13/Models/left-bottom-airbrake.xml</path>
-	  <name>left-bottom-airbrake</name>
-	 <offsets>
-			<x-m>2.409528</x-m>
-			<y-m>-3.233188</y-m>
-			<z-m>0.647128</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-      <model>
-	 <path>Aircraft/ASK13/Models/right-top-airbrake.xml</path>
-	  <name>right-top-airbrake</name>
-	 <offsets>
-			<x-m>2.480349</x-m>
-			<y-m>2.693422</y-m>
-			<z-m>0.597343</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-       <model>
-	 <path>Aircraft/ASK13/Models/right-bottom-airbrake.xml</path>
-	  <name>right-bottom-airbrake</name>
-	 <offsets>
-			<x-m>2.409528</x-m>
-			<y-m>3.233188</y-m>
-			<z-m>0.647128</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-        <model>
-	 <path>Aircraft/ASK13/Models/elevator-and-trim.xml</path>
-	  <name>elevator-and-trim</name>
-	 <offsets>
-			<x-m>6.866511</x-m>
-			<y-m>-0.003489</y-m>
-			<z-m>0.719451</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-      <model>
-	 <path>Aircraft/ASK13/Models/front-airbrakes-handl.xml</path>
-	  <name>front-airbrakes-handle</name>
-	 <offsets>
-			<x-m>0.895516</x-m>
-			<y-m>-0.231178</y-m>
-			<z-m>-0.058508</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-       <model>
-	 <path>Aircraft/ASK13/Models/rear-airbrakes-handl.xml</path>
-	  <name>rear-airbrakes-handle</name>
-	 <offsets>
-			<x-m>2.040653</x-m>
-			<y-m>-0.231178</y-m>
-			<z-m>0.123649</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-
-			
-   <model>
-	 <path>Aircraft/ASK13/Models/front-trim-handle.xml</path>
-	  <name>front-trim-handl</name>
-	 <offsets>
- 			<x-m>0.947587</x-m>
-			<y-m>0.257991</y-m>
-			<z-m>0.122396</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-    <model>
-	 <path>Aircraft/ASK13/Models/rear-trim-handle.xml</path>
-	  <name>rear-trim-handl</name>
-	 <offsets>
-			<x-m>2.039331</x-m>
-			<y-m>0.257991</y-m>
-			<z-m>0.302744</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-     <model>
-	 <path>Aircraft/ASK13/Models/front-left-pedal.xml</path>
-	  <name>front-left-pedal_</name>
-	 <offsets>
-			<x-m>0.390158</x-m>
-			<y-m>-0.103514</y-m>
-			<z-m>0.034231</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-      <model>
-	 <path>Aircraft/ASK13/Models/front-right-pedal.xml</path>
-	  <name>front-right-pedal_</name>
-	 <offsets>
-			<x-m>0.390246</x-m>
-			<y-m>0.103461</y-m>
-			<z-m>0.033928</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-      <model>
-	 <path>Aircraft/ASK13/Models/rear-left-pedal.xml</path>
-	  <name>rear-left-pedal_</name>
-	 <offsets>
-			<x-m>1.45867</x-m>
-			<y-m>-0.22577</y-m>
-			<z-m>-0.104397</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- 
-       <model>
-	 <path>Aircraft/ASK13/Models/rear-right-pedal.xml</path>
-	  <name>rear-right-pedal_</name>
-	 <offsets>
-			<x-m>1.45867</x-m>
-			<y-m>0.22577</y-m>
-			<z-m>-0.104397</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>	 
- </model>
- -->
-  <!-- <model>
-    <path>Aircraft/ASK13/Models/Immat/immat.xml</path>
-    <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
-    </offsets>
-  </model>-->
 
 
   <effect>
-    <inherits-from>Models/Effects/ask13_model</inherits-from>
+    <inherits-from>Models/Effects/model</inherits-from>
      <object-name>door</object-name>
      <object-name>door.int</object-name>
     <object-name>body</object-name>

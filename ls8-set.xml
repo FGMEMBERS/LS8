@@ -34,7 +34,7 @@ copyright 2010 Patrice Poly; 2016 D-ECHO
   </model>
 
 		<sound>
-			<path>Aircraft/LS8/Sounds/ask13-sound.xml</path>
+			<path>Aircraft/LS8/Sounds/sound.xml</path>
 		</sound>
   
             <weight n="0">
@@ -422,7 +422,6 @@ When there is somebody with a followme around, you can connect to it by pressing
 			<file>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.nas</file>
 			<file>Aircraft/LS8/Nasal/wool-thread.nas</file>
 			<file>Aircraft/LS8/Nasal/AR3201.nas</file>
-			<file>Aircraft/LS8/Nasal/immat.nas</file>
 			<file>Aircraft/LS8/Nasal/dialogs.nas</file>
 			<file>Aircraft/LS8/Nasal/ground-handling.nas</file>
 			<file>Aircraft/LS8/Nasal/liveries.nas</file>
