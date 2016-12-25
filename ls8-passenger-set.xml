@@ -7,22 +7,22 @@
   This file is licensed under the GPL license version 2 or later.
 -->
 <!--
-  Usage: fgfs - -prop:/sim/remote/pilot-callsign="remote pilot callsign" - -aircraft=ask13-passenger
+  Usage: fgfs - -prop:/sim/remote/pilot-callsign="remote pilot callsign" - -aircraft=ls8-passenger
 -->
 <PropertyList>
 
  <sim>
 
-  <description>ASK 13 Passenger View</description>
-  <author>Patrice Poly</author>
+  <description>DG Flugzeugbau LS8-SC neo Passenger View</description>
+  <author>Patrice Poly; D-ECHO</author>
   <status>early-production</status>
   <aircraft-version>20100401</aircraft-version>
-  <variant-of>ask13</variant-of>
+  <variant-of>ls8</variant-of>
   
   <flight-model>null</flight-model>
 
   <startup>
-   <splash-texture>Aircraft/ASK13/splash.png</splash-texture>
+   <splash-texture>Aircraft/LS8/splash.png</splash-texture>
   </startup>
 
   <presets>
@@ -32,7 +32,7 @@
 
   <!-- 3d model -->
   <model>
-   <path>Aircraft/ASK13/Models/ask13-passenger.xml</path>
+   <path>Aircraft/LS8/Models/passenger.xml</path>
   </model>
 
   <!-- Views -->
@@ -174,7 +174,7 @@
   <menubar>
    <default>
     <menu n="100">
-     <label>Ask-13</label>
+     <label>LS8</label>
      <item>
       <label>Select MP-pilot</label>
       <binding>
@@ -196,7 +196,7 @@
    <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
   </dual_control_tools>
   <aircraft_dual_control>
-   <file>Aircraft/ASK13/Nasal/ask13-dual-control.nas</file>
+   <file>Aircraft/LS8/Nasal/ls8-dual-control.nas</file>
   </aircraft_dual_control>
   <dual_control>
    <file>Aircraft/Generic/DualControl/copilot-dual-control.nas</file>

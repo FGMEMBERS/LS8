@@ -27,6 +27,10 @@ copyright 2010 Patrice Poly
 
   <model>
    <path archive="y">Aircraft/LS8/Models/ls8.xml</path>
+
+      <livery>
+        <file type="string"></file>
+      </livery>
   </model>
 
 		<sound>
@@ -52,7 +56,7 @@ copyright 2010 Patrice Poly
                 <min-lb>0.0</min-lb>
             </weight>
   <help>
-   <title>ASK 13</title>
+   <title>LS8sc neo</title>
 	<key>
 		<name>Ctrl-w</name>
 		<desc>Place winch 1000m in front of aircraft</desc>
@@ -142,6 +146,13 @@ When there is somebody with a followme around, you can connect to it by pressing
          <property>/controls/gear/assist-1</property>
        </binding>
      </item>   
+          <item>
+            <label>Select Livery</label>
+            <binding>
+              <command>nasal</command>
+              <script>aircraft.livery.dialog.open()</script>
+            </binding>
+          </item>
     </menu>
    </default>
   </menubar>
@@ -407,14 +418,15 @@ When there is somebody with a followme around, you can connect to it by pressing
     <doors>
       <file>Aircraft/LS8/Nasal/doors.nas</file>
     </doors>
-		<ask13>
+		<ls8>
 			<file>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.nas</file>
 			<file>Aircraft/LS8/Nasal/wool-thread.nas</file>
 			<file>Aircraft/LS8/Nasal/AR3201.nas</file>
 			<file>Aircraft/LS8/Nasal/immat.nas</file>
 			<file>Aircraft/LS8/Nasal/dialogs.nas</file>
 			<file>Aircraft/LS8/Nasal/ground-handling.nas</file>
-		</ask13>
+			<file>Aircraft/LS8/Nasal/liveries.nas</file>
+                    </ls8>
 	</nasal>
   
 </PropertyList>
