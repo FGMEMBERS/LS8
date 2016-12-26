@@ -66,6 +66,13 @@
      <object-name>door</object-name>
      <object-name>door.int</object-name>
      <object-name>woolthread</object-name>
+     <object-name>panel</object-name>
+     <object-name>Vario1</object-name>
+     <object-name>Vario2</object-name>
+     <object-name>ASI</object-name>
+     <object-name>ALT</object-name>
+     <object-name>COMP</object-name>
+     <object-name>COMM</object-name>
     <property>sim/model/door-positions/canopy/position-norm</property>
    <interpolation>
      <entry>
@@ -165,43 +172,64 @@
             <z2-m>-0.26483</z2-m>
         </axis>
  </animation>
+ <animation>
+     <type>translate</type>
+     <object-name>wheelM</object-name>
+     <property>/gear/gear[1]/compression-m</property>
+     <factor>1</factor>
+     <axis><z>1</z></axis>
+ </animation>
+ <animation>
+     <type>spin</type>
+     <object-name>wheelM</object-name>
+     <property>/gear/gear[1]/rollspeed-ms</property>
+    <factor>-50</factor>
+    <center>
+            <x-m>-1.30988</x-m>
+            <z-m>-0.42167</z-m>
+    </center>
+     <axis><y>1</y></axis>
+ </animation>
  
   <model>
+      <name>Vario1</name>
 	 <path>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.xml</path>
 	 <offsets>
-		 <x-m>-2.27944</x-m>
-		 <y-m> 0.11239</y-m>
+		 <x-m>-2.462</x-m>
+		 <y-m> 0.05</y-m>
 		 <z-m>0.14266</z-m>
 		 <pitch-deg>0</pitch-deg>
 	 </offsets>	 
  </model>
  
   <model>
+      <name>Vario2</name>
 	 <path>Aircraft/LS8/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
 	 <offsets>
-		 <x-m>-2.27944</x-m>
-		 <y-m> -0.11239</y-m>
+		 <x-m>-2.462</x-m>
+		 <y-m> -0.05</y-m>
 		 <z-m>0.14266</z-m>
 		 <pitch-deg>0</pitch-deg>
 	 </offsets>	 
  </model>
  
   <model>
-	 <path>Aircraft/LS8/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
+      <name>ASI</name>
+	 <path>Aircraft/LS8/Models/instruments/winter-asi-dg101/80mm_asi_6fms4.xml</path>
 	 <offsets>
-		 <x-m>-2.276</x-m>
-		 <y-m>0.10831</y-m>
+		 <x-m>-2.462</x-m>
+		 <y-m>-0.10831</y-m>
 		 <z-m>0.03804</z-m>
-		 <pitch-deg>-6</pitch-deg>
 	 </offsets>	 
      </model>
- 
+
    <model>
-	 <path>Aircraft/Instruments-3d/comp/comp.xml</path>
+       <name>COMP</name>
+	 <path>Aircraft/LS8/Models/instruments/MagneticCompass/MagneticCompass.xml</path>
 	 <offsets>
-		 <x-m>-2.27944</x-m>
+		 <x-m>-2.47</x-m>
 		 <y-m> 0.0</y-m>
-		 <z-m>0.14266</z-m>
+		 <z-m>0.19</z-m>
 		 <pitch-deg>0</pitch-deg>
 	 </offsets>	 
  </model>
@@ -218,33 +246,27 @@
 	 </offsets>	 
  </model>
  
-   <model>
-	 <path>Instruments-3d/ball/ball.xml</path>
-	 <offsets>
-		 <x-m>-2.276</x-m>
-		 <y-m> -0.11239</y-m>
-		 <z-m>0.03804</z-m>
-		 <pitch-deg>-4</pitch-deg>
-	 </offsets>	 
- </model>
  
  
   <model>
+      <name>COMM</name>
 	 <path>Aircraft/Instruments-3d/ar-3201/ar-3201.xml</path>
 	 <offsets>
-		 <x-m>-2.265</x-m>
+		 <x-m>-2.46</x-m>
 		 <y-m> 0.0</y-m>
 		 <z-m>-0.05</z-m>
-		 <pitch-deg>-20</pitch-deg>
+		 <pitch-deg>-16</pitch-deg>
 	 </offsets>	 
  </model>
  
    <model>
+       <name>ALT</name>
 	 <path>Aircraft/Instruments-3d/winter-alti-4110/winter-4110.xml</path>
 	 <offsets>
-		 <x-m>-2.279</x-m>
-		 <y-m> 0.0</y-m>
-                 <z-m>0.04</z-m>
+		 <x-m>-2.462</x-m>
+		 <y-m>0.10831</y-m>
+		 <z-m>0.03804</z-m>
+		 <pitch-deg>-6</pitch-deg>
 	 </offsets>	 
  </model>
 
