@@ -378,6 +378,37 @@ When there is somebody with a followme around, you can connect to it by pressing
 
 	<input>
 		<keyboard>
+
+                        <key n="21">
+                        <name>Ctrl-U</name>
+                        <desc>[Cheat] Add 1000ft of emergency altitude</desc>
+                        <binding>
+                        <command>property-adjust</command>
+                        <property>/position/altitude-ft</property>
+                        <step type="double">1000.0</step>
+                        </binding>
+                        <binding>
+                        <command>property-assign</command>
+                        <property>/sim/startup/onground</property>
+                        <value type="bool">false</value>
+                        </binding>
+                        <binding>
+                        <command>property-assign</command>
+                        <property>/sim/multiplay/chat</property>
+                        <value>I used Ctrl-u</value>
+                        </binding>
+                        </key>
+                        <key n="84">
+                            <name>T</name>
+                            <desc>Toggle chat message - Time</desc>
+                            <binding>
+                                <command>nasal</command>
+                                <script>
+                                    time=getprop("/sim/time/gmt-string");
+                                    msg="I took off/landed at "~time;
+                                    setprop("/sim/multiplay/chat", msg);</script>
+                            </binding>
+                        </key>
                         <key n="127">
                             <name>Delete</name>
                             <desc>Toggle Reversers</desc>

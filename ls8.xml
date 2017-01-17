@@ -3,11 +3,11 @@
 <airplane mass="562">
 
 <!-- Approach configuration -->
-<approach speed="40" aoa="5.2" glide-angle="2.1">
+<approach speed="40" aoa="5.2" glide-angle="10">
 </approach>
 
 <!-- Cruise configuration -->
-<cruise speed="45" alt="5000" glide-angle="2.1">
+<cruise speed="45" alt="5000" glide-angle="8">
 </cruise>
 
 <!-- pilot's eyepoint -->
