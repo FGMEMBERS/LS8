@@ -14,7 +14,7 @@
 
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Aircraft/Sky-sportster/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>../../Effects/instrument-glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
   
