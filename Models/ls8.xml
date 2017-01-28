@@ -312,7 +312,7 @@
     <texture>texture.png</texture>
 
   </animation>
-    
+    <!--
    <animation>
    <type>rotate</type>
    <object-name>front-airbrakes-handle</object-name>
@@ -492,7 +492,7 @@
 			<z>0</z>
 		</axis>
  </animation>
- 
+ -->
  	<animation>
 		<type>rotate</type>
 		<object-name>aileronLI</object-name>
