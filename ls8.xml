@@ -1,50 +1,45 @@
 <?xml version="1.0"?>
 
-<airplane mass="562">
+<airplane mass="584.225" version="YASIM_VERSION_CURRENT">
 
 <!-- Approach configuration -->
-<approach speed="40" aoa="5.2" glide-angle="10">
+<approach speed="40" aoa="5.2" glide-angle="8">
+    <solve-weight idx="0" weight="140.0" />
 </approach>
 
 <!-- Cruise configuration -->
-<cruise speed="45" alt="5000" glide-angle="8">
+<cruise speed="56.7" alt="5000" glide-angle="5">
+    <solve-weight idx="0" weight="140.0" />
 </cruise>
 
 <!-- pilot's eyepoint -->
 <cockpit x="1.67663" y="0" z="0.28341"/>
 
-<fuselage ax="3.37218" ay="0.0" az="-0.16238" bx="-2.98439" by="0.0" bz="-0.00127"
-		  width="0.6" taper="0.1" midpoint="0.24" idrag="1" />
+<fuselage ax="3.37218" ay="0.0" az="-0.16238" bx="-2.98439" by="0.0" bz="-0.00127" width="0.6" taper="0.1" midpoint="0.24"/>
 
-<wing x="1.00925" y="0.22512" z="0.13407" taper="0.379" incidence="3"
-	  length="8.8" chord="0.947" sweep="-1" dihedral="3.5" >
-	<stall aoa="12" width="12" peak="1.5"/>
-		<flap0 start="0.512" end="0.9" lift="1.55" drag="1.3"/>
-			<control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
-			<control-output control="FLAP0" side="left" prop="surface-positions/left-aileron-pos-norm"/>
-			<control-output control="FLAP0" side="right" prop="surface-positions/right-aileron-pos-norm"/>
-			<control-speed control="FLAP0" transition-time="0.2"/>
-<!--	<control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
-	<control-output control="FLAP0" side="left"
-			prop="surface-positions/left-aileron-pos-norm"/>
-	<control-output control="FLAP0" side="right"
-			prop="surface-positions/right-aileron-pos-norm"/>
-	<control-speed control="FLAP0" transition-time="0.8"/>
--->
-	<spoiler start="0.28" end="0.40" lift="-2" drag="50"/>
-			<control-input axis="/controls/engines/engine/throttle" control="SPOILER"
-			src0="0" src1="1.0"
-			dst0="1.0" dst1="0"/>
-<!--	<control-input axis="/controls/engines/engine[0]/throttle" control="SPOILER"
-			src0="0" src1="1.0"
-			dst0="1.0" dst1="0"/>
--->
-	<control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
-	<control-speed  control="SPOILER" transition-time="0.5"/>
+<wing x="1.00925" y="0.22512" z="0.11" taper="0.2" incidence="1.5" length="8.4" chord="0.947" sweep="-1" dihedral="3.5" >
+            <stall aoa="12" width="12" peak="1.5"/>
+            
+            <flap0 start="0.512" end="0.9" lift="1.55" drag="1.3"/>
+            <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+            <control-output control="FLAP0" side="left" prop="surface-positions/left-aileron-pos-norm"/>
+            <control-output control="FLAP0" side="right" prop="surface-positions/right-aileron-pos-norm"/>
+            
+            <control-speed control="FLAP0" transition-time="0.2"/>
+            <spoiler start="0.28" end="0.40" lift="-2" drag="50"/>
+            <control-input axis="/controls/engines/engine/throttle" control="SPOILER"
+                src0="0" src1="1.0"
+                dst0="1.0" dst1="0"/>
+            <control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
+            <control-speed  control="SPOILER" transition-time="0.5"/>
 </wing>
+<!--Winglets-->
+<mstab x="1.14766" y="8.60663" z="0.62731" taper="0.1" 
+	   length="0.5" chord="0.25" sweep="25" incidence="0" dihedral="40" >
+</mstab>
 
 <hstab x="-2.88893" y="0.0" z="1.22494" taper="0.53" 
-	   length="1.2" chord="0.5" sweep="0" incidence="0" effectiveness="1.8">
+	   length="1.2" chord="0.5" sweep="0" incidence="0" >
             <stall aoa="12" width="16" peak="1.5"/>
             <flap0 start="0.0" end="1.0" lift="1.6" drag="1.45"/>
             <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -52,7 +47,7 @@
             <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>
 
-<vstab x="-2.88599" y="0" z="0.01965" taper="0.7" effectiveness="2.5"
+<vstab x="-2.88599" y="0" z="0.01965" taper="0.7" effectiveness="4"
 	   length="1.2" chord="1" sweep="5">
 	<stall aoa="15" width="14" peak="1.5"/>
 		<flap0 start="0" end="1" lift="1.6" drag="1.3"/>
@@ -64,18 +59,16 @@
 
 <!--Front Skid (Fuselage)-->
 
-<gear x="2.93" y="0" z="-0.4" compression="0.1" dfric="1.5" sfric ="1.5" damp="2" skid="1">
-
-</gear>
+<gear x="2.93" y="0" z="-0.4" compression="0.1" dfric="1.5" sfric ="1.5" damp="2" skid="1" />
 
 <!-- main wheel ,  brake is tied to full airbrakes-->
 <gear x="1.30793" y="0" z="-0.57845" compression="0.05" spring="1" damp="1"
-   dfric="0.9" sfric ="0.9" retractable="true">
-  <control-input axis="/controls/engines/engine/throttle" control="BRAKE"
-  src0="0" src1="0.15"
-  dst0="1" dst1="0"
-  />
-  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+    dfric="0.9" sfric ="0.9" retractable="true">
+    <control-input axis="/controls/engines/engine/throttle" control="BRAKE"
+        src0="0" src1="0.15"
+        dst0="1" dst1="0"
+    />
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
     <control-speed control="EXTEND" transition-time="1"/>
     <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
@@ -83,25 +76,23 @@
 
 <!-- Tail wheel -->
 
-<gear x="-2.82559" y="0" z="-0.11638" compression="0.1" dfric="1.5" sfric ="1.5" damp="2" skid="1">
-
-</gear>
+<gear x="-2.82559" y="0" z="-0.11638" compression="0.1" dfric="1.5" sfric="1.5" damp="2" />
 
 <!--right wing skid-->
-<gear x="1.17573" y="-8.56136" z="0.57752" skid="1" compression="0.1" spring="0.9" sfric="1" dfric="1"/>
+<gear x="1.17573" y="-8.56136" z="0.57752" skid="1" compression="0.1" spring="0.9" sfric="1.7" dfric="1.5" />
 
 <!--lef wing skid-->
-<gear x="1.17573" y="8.56136" z="0.57752" skid="1" compression="0.1" spring="0.9" sfric="1" dfric="1"/>
+<gear x="1.17573" y="8.56136" z="0.57752" skid="1" compression="0.1" spring="0.9" sfric="1.7" dfric="1.5" />
 
 <!-- Pilot -->
-        <weight x="1.79862" y="0.0" z="-0.00803" mass-prop="/sim/weight[0]/weight-lb"/>
-        <!--Tail ballast-->
-        <weight x="-2.82138" y="0.0" z="0.05698" mass-prop="/sim/weight[1]/weight-lb"/>
-        <!--Wing ballast-->
-        <weight x="1.06593" y="3.09643" z="0.28471" mass-prop="/sim/weight[2]/weight-lb"/>
-        <weight x="1.06593" y="-3.09643" z="0.28471" mass-prop="/sim/weight[2]/weight-lb"/>
+<weight x="1.79862" y="0.0" z="-0.00803" mass-prop="/sim/weight[0]/weight-lb" solve-weight="1" idx="0"/>
+<!--Tail ballast-->
+<weight x="-2.82138" y="0.0" z="0.05698" mass-prop="/sim/weight[1]/weight-lb"/>
+<!--Wing ballast-->
+<weight x="1.06593" y="3.09643" z="0.28471" mass-prop="/sim/weight[2]/weight-lb"/>
+<weight x="1.06593" y="-3.09643" z="0.28471" mass-prop="/sim/weight[2]/weight-lb"/>
 
-<ballast x="1.5" y="0" z="0" mass="200"/><!--Cockpit-->
+<ballast x="2.1" y="0" z="0" mass="200"/><!--Cockpit-->
 <ballast x="1.3" y="0" z="-0.215" mass="50"/><!--Retractable Gear-->	
 
 
@@ -145,7 +136,7 @@
 	<control-input axis="/controls/winch/place" control="PLACEWINCH"/>
 </hitch>
 
-<hitch name="aerotow" x="3.37218" y="0" z="-0.15346" force-is-calculated-by-other="0">
+<hitch name="aerotow" x="3.1" y="0" z="-0.15346" force-is-calculated-by-other="0">
 	<tow length="60" weight-per-meter="0.035" elastic-constant="9000" break-force="10000" mp-auto-connect-period="0.0"/>
 	<winch max-tow-length="1000" min-tow-length="60" initial-tow-length="60"/>
 	<control-input axis="/controls/aerotow/find-aircraft" control="FINDAITOW"/>
